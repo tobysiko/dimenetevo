@@ -1,0 +1,265 @@
+ 
+<!-- A "project" describes a set of targets that may be requested
+     when Ant is executed.  The "default" attribute defines the
+     target which is executed if no specific target is requested,
+     and the "basedir" attribute defines the current working directory
+     from which Ant executes the requested task.  This is normally
+     set to the current working directory.
+-->
+
+<project name="BoolNet2" default="dist" basedir=".">
+
+	<!--  <import file="nbproject/build-impl.xml"/>
+
+    <import file="nbproject/profiler-build-impl.xml"/> -->
+
+	<!--===================== Property Definitions =========================== -->
+
+
+<!--
+
+  Each of the following properties are used in the build script.
+  Values for these properties are set by the first place they are
+  defined, from the following list:
+
+  * Definitions on the "ant" command line (ant -Dfoo=bar compile).
+
+  * Definitions from a "build.properties" file in the top level
+    source directory of this application.
+
+  * Definitions from a "build.properties" file in the developer's
+    home directory.
+
+  * Default definitions in this build.xml file.
+
+  You will note below that property values can be composed based on the
+  contents of previously defined properties.  This is a powerful technique
+  that helps you minimize the number of changes required when your development
+  environment is modified.  Note that property composition is allowed within
+  "build.properties" files as well as in the "build.xml" script.
+
+    <property name="app.path"      value="/${app.name}"/>
+    <property name="project.class.path"  value="${build.home}:${lib.home}/colt.jar:${lib.home}/y.jar:${basedir}/../../utilities/utilities/bin/"/>
+-->
+
+
+<!-- ==================== File and Directory Names ======================== -->
+	
+	<property name="app.name" value="NDsim_2007_10_15"/>
+	
+	<property name="app.version" value="0.2-dev"/>
+	<property name="build.home" value="${basedir}/bin"/>
+	
+	<property name="dist.home" value="${basedir}/dist"/>
+	<property name="docs.home" value="${basedir}/docs"/>
+	<property name="src.home" value="${basedir}/src"/>
+	<property name="lib.home" value="${basedir}/lib"/>
+	
+	<property name="main.class" value="sim.NDMain"/>
+	
+	<path id="jar.list">
+		<fileset dir="${lib.home}">
+			<include name="**/*.jar"/>
+		</fileset>
+		<pathelement path="${build.home}"/>
+	</path>
+	
+
+	
+	
+	
+	<pathconvert targetos="unix" property="project.class.path" refid="jar.list"></pathconvert>
+
+<!--  ==================== Compilation Control Options ==================== -->
+
+<!--
+
+  These properties control option settings on the Javac compiler when it
+  is invoked using the <javac> task.
+
+  compile.debug        Should compilation include the debug option?
+
+  compile.deprecation  Should compilation include the deprecation option?
+
+  compile.optimize     Should compilation include the optimize option?
+
+-->
+	
+	<property name="compile.debug" value="true"/>
+	<property name="compile.deprecation" value="false"/>
+	<property name="compile.optimize" value="true"/>
+
+
+
+
+<!-- ==================== All Target ====================================== -->
+
+<!--
+
+  The "all" target is a shortcut for running the "clean" target followed
+  by the "compile" target, to force a complete recompile.
+
+-->
+	
+	<target name="all" depends="clean,compile"
+			description="Clean build and dist directories, then compile"/>
+
+
+
+<!-- ==================== Clean Target ==================================== -->
+
+<!--
+
+  The "clean" target deletes any previous "build" and "dist" directory,
+  so that you can be ensured the application can be built from scratch.
+
+-->
+	
+	<target name="clean"
+			description="Delete old build and dist directories">
+		<delete dir="${build.home}"/>
+		<delete dir="${dist.home}"/>
+	</target>
+
+
+
+<!-- ==================== Compile Target ================================== -->
+
+<!--
+
+  The "compile" target transforms source files (from your "src" directory)
+  into object files in the appropriate location in the build directory.
+  This example assumes that you will be including your classes in an
+  unpacked directory hierarchy under "/WEB-INF/classes".
+
+        <pathelement path="${classpath}"/>
+      <pathelement location="${basedir}/lib/colt.jar"/>
+      <pathelement location="${basedir}/lib/y.jar"/>
+      <pathelement location="${basedir}/../../utilities/utilities/bin/"/>
+      
+-->
+	
+	<target name="compile"
+			description="Compile Java sources">
+
+			
+			
+    <!-- Compile Java classes as necessary -->
+		<mkdir dir="${build.home}"/>
+		<javac srcdir="${src.home}"
+				destdir="${build.home}"
+				debug="${compile.debug}"
+				deprecation="${compile.deprecation}"
+				optimize="${compile.optimize}"
+                                source="1.5"
+                                target="1.5">
+			
+			<classpath>
+				<pathelement path="${project.class.path}"/>
+			</classpath>
+		
+		</javac>
+	
+	</target>
+
+
+	
+<!-- ==================== Distribute Target ===================================== -->
+<!-- 
+Creates application jar with all dependencies within and a separate utilities.jar 
+
+-->
+	
+	
+	<target name="dist" depends="unpack,compile"
+			description="Create binary distribution">
+		
+
+		<mkdir dir="${dist.home}"/>
+		
+		<copy todir="${build.home}">
+		    <fileset dir="${src.home}">
+		      <exclude name="**/.svn"/>
+		    </fileset>
+		  </copy>
+		
+		<jar jarfile="${dist.home}/${app.name}.jar" basedir="${build.home}">
+			<manifest>
+				<attribute name="Main-Class" value="${main.class}" />
+			</manifest>
+		</jar>
+
+	
+	</target>
+	
+
+  
+  
+
+
+<!-- ==================== Javadoc Target ================================== -->
+
+<!--
+
+  The "javadoc" target creates Javadoc API documentation for the Java
+  classes included in your application.  Normally, this is only required
+  when preparing a distribution release, but is available as a separate
+  target in case the developer wants to create Javadocs independently.
+<classpath refid="${jar.list}"/>
+-->
+	
+	<target name="javadoc" depends="compile"
+			description="Create Javadoc API documentation">
+		
+		<mkdir dir="${docs.home}/api"/>
+		
+		<javadoc sourcepath="${src.home}"
+				destdir="${docs.home}/api"
+				packagenames="*">
+		
+		</javadoc>
+	
+	</target>
+  
+  
+
+	<!-- ==================== Unpack lib Target ===================================== -->
+
+	<!-- Unpacks the library jars for repackaging into a single jar file 
+
+					<exclude name="**/jfreechart*"/>
+					<exclude name="**/jcommon*"/>
+					<exclude name="**/itext*"/>
+					<exclude name="**/epsgraphics*"/>
+					<exclude name="**/batik*"/>
+					
+	-->
+		
+	<target name="unpack" depends="clean"
+				description="Unzips library jars for repacking into a single jar">
+			
+			<mkdir dir="${build.home}"/>
+			
+			<unzip dest="${build.home}">
+				<patternset>
+					<exclude name="**/MANIFEST.MF"/>
+				</patternset>
+				<fileset dir="${lib.home}">
+					<include name="**/*.jar"/>
+					<exclude name="**/jython*"/>
+					<exclude name="**/Chirp*"/>
+					<exclude name="**/deploy*"/>
+					<exclude name="**/jnumeric*"/>
+
+
+				</fileset>
+			</unzip>
+		</target>
+		
+
+
+
+
+
+
+</project>

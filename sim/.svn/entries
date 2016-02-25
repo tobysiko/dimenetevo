@@ -1,0 +1,148 @@
+8
+
+dir
+143
+svn+ssh://sikosek@ebbsvn:23/svn/dimerevo/javacode/sim
+svn+ssh://sikosek@ebbsvn:23/svn/dimerevo
+
+
+
+2007-07-03T07:23:16.041178Z
+136
+sikosek
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ce50cf01-ca20-0410-b233-f071ceed9e1b
+
+EvolutionaryProcess.java
+file
+
+
+
+
+2007-04-03T12:53:18.000000Z
+159f36f228d5ce1b9a3fcf97dc9f22fe
+2007-07-03T07:23:01.657000Z
+135
+sikosek
+
+operation
+dir
+
+DimerNondimerMain.java
+file
+
+
+
+
+2007-03-20T18:06:33.000000Z
+d665c3c980b7ea1a8ffbdb273213eddb
+2007-03-20T18:06:33.222339Z
+118
+sikosek
+
+graph
+dir
+
+DefaultProcess.java
+file
+
+
+
+
+2007-04-03T12:53:18.000000Z
+6955c50486c68caf28df3d63d7a455c6
+2007-07-03T07:23:01.657000Z
+135
+sikosek
+
+Parameters.java
+file
+
+
+
+
+2007-04-03T12:53:18.000000Z
+0fd22fd3e0f73ac309c90ecf4e4f0e09
+2007-07-03T07:23:01.657000Z
+135
+sikosek
+
+Main.java
+file
+
+
+
+
+2007-04-03T12:53:28.000000Z
+b20a575da8bb65d1aa439807aff6f8c8
+2007-07-03T07:23:16.041000Z
+136
+sikosek
+
+gui
+dir
+
+UnZip.java
+file
+
+
+
+
+2007-03-19T17:25:46.000000Z
+6c947fcf79ede6b0e104deaf003c18b1
+2007-03-19T17:25:46.141368Z
+117
+sikosek
+
+Tester.java
+file
+
+
+
+
+2007-04-03T12:53:18.000000Z
+46bdc80ce721bc16d5b5b2b2db3f0a22
+2007-07-03T07:23:01.657000Z
+135
+sikosek
+
+DataAnalyser.java
+file
+
+
+
+
+2007-03-19T17:25:46.000000Z
+5d0ef72e0fdf82b2ba6bb9a27cde7e9e
+2007-03-19T17:25:46.141368Z
+117
+sikosek
+
+MainGUI.java
+file
+
+
+
+
+2007-04-03T12:53:18.000000Z
+5250b044964963be94fdb33968e948e7
+2007-07-03T07:23:01.657000Z
+135
+sikosek
+
+datatype
+dir
+

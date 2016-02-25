@@ -1,0 +1,18 @@
+!SESSION 2007-04-03 10:09:47.836 -----------------------------------------------
+eclipse.buildId=M20060921-0945
+java.version=1.5.0_10
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Command-line arguments:  -data /ddfs/user/data/s/sikosek/workspace/Boolean_Networks -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.osgi 2 1 2007-04-03 10:09:51.290
+!MESSAGE NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+
+!ENTRY org.eclipse.osgi 2 1 2007-04-03 10:09:51.292
+!MESSAGE NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+
+!ENTRY org.eclipse.osgi 2 1 2007-04-03 10:09:51.293
+!MESSAGE NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+
+!ENTRY org.eclipse.osgi 2 1 2007-04-03 10:09:51.294
+!MESSAGE NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages

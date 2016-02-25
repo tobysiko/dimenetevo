@@ -1,0 +1,52 @@
+8
+
+dir
+143
+svn+ssh://sikosek@ebbsvn:23/svn/dimerevo/javacode/.settings
+svn+ssh://sikosek@ebbsvn:23/svn/dimerevo
+
+
+
+2007-04-03T13:24:33.052071Z
+124
+sikosek
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ce50cf01-ca20-0410-b233-f071ceed9e1b
+
+org.eclipse.jdt.ui.prefs
+file
+
+
+
+
+2007-04-03T12:23:19.000000Z
+4c705dc8152268b15c5c375a0f6a6b7b
+2006-11-09T14:43:07.287535Z
+4
+sikosek
+
+org.eclipse.ltk.core.refactoring.prefs
+file
+
+
+
+
+2007-04-03T12:53:26.000000Z
+a7255d04391bc40076b14532c0777dad
+2007-04-03T13:24:33.052000Z
+124
+sikosek
+

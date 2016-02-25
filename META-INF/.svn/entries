@@ -1,0 +1,52 @@
+8
+
+dir
+143
+svn+ssh://sikosek@ebbsvn:23/svn/dimerevo/javacode/META-INF
+svn+ssh://sikosek@ebbsvn:23/svn/dimerevo
+
+
+
+2006-11-09T14:43:07.287535Z
+4
+sikosek
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ce50cf01-ca20-0410-b233-f071ceed9e1b
+
+INDEX.LIST
+file
+
+
+
+
+2007-04-03T12:25:31.000000Z
+d8a5b0e554e2848d369b0438ef8408a8
+2006-11-09T14:43:07.287535Z
+4
+sikosek
+
+MANIFEST.MF
+file
+
+
+
+
+2007-04-03T12:25:31.000000Z
+dd98d01c40e8804d8046b5b6fd13c54b
+2006-11-09T14:43:07.287535Z
+4
+sikosek
+

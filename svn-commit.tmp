@@ -1,0 +1,10 @@
+starting threads(processes) in inverse order, to find out where sims 
+crash on condor...
+--This line, and those below, will be ignored--
+
+_M   .
+M    .classpath
+M    src/sim/DimerNetworksMain.java
+M    src/sim/operation/RandomNetworkGenerator.java
+M    src/sim/DefaultProcess.java
+M    build.xml
