@@ -4,8 +4,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3.8.1"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="/Users/sikosek/workspace/BoolNet2/lib/colt.jar"/>
-	<classpathentry kind="lib" path="/Users/sikosek/workspace/BoolNet2/lib/commons-collections-3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/sikosek/workspace/BoolNet2/lib/jung-1.7.5.jar" sourcepath="/ddfs/user/data/s/sikosek/jars/jung-1.7.5-src.jar"/>
+	<classpathentry kind="lib" path="/Users/sikosek/workspace/DimeNetEvo/lib/colt.jar"/>
+	<classpathentry kind="lib" path="/Users/sikosek/workspace/DimeNetEvo/lib/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/sikosek/workspace/DimeNetEvo/lib/jung-1.7.5.jar" sourcepath="/ddfs/user/data/s/sikosek/jars/jung-1.7.5-src.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
