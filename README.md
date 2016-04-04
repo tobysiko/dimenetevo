@@ -4,10 +4,8 @@ Pre-built executable jar files are included in the main directory. Especially, t
 dimernets_GUI.jar
 nondimernets_GUI.jar
 
-Run:
+If Java is installed, simply execute: 
 java -jar jarfile.jar
-
-If Java is installed, simply execute.
 ################################################################################################################
 
 Download thesis here: https://www.researchgate.net/publication/264934369_The_evolution_of_heterodimerising_transcription_factor_networks
